@@ -1,13 +1,18 @@
 from setuptools import setup
+import fastinterval
+
+file('README', 'w').write(fastinterval.__doc__)
+
 
 setup(
     name='fastinterval',
+    version=fastinterval.VERSION,
     py_modules=['fastinterval'],
     author='James Casbon',
     author_email='casbon@gmail.com',
     description='Interval class and fasta access',
-    #long_description=fastinterval.__doc__,
-    #test_suite='test',
+    long_description=fastinterval.__doc__,
+    test_suite='nose.collector',
     requires=['pyfasta', 'bxpython'],
     url='https://github.com/jamescasbon/fastinterval',
     classifiers = [
