@@ -1,7 +1,7 @@
 from setuptools import setup
 import fastinterval
 
-file('README', 'w').write(fastinterval.__doc__)
+file('README.rst', 'w').write(fastinterval.__doc__)
 
 
 setup(
