@@ -32,7 +32,7 @@ The Interval class supports many interval operations::
     True
     >>> int1.is_contiguous(int2)
     True
-    >>> int1.contains(int2)
+    >>> int1 in int2
     False
     >>> int1.intersection(int2)
     Interval(125, 150)
@@ -159,7 +159,7 @@ class Interval(BaseInterval):
         """ Return True if the intervals are overlapping or contiguous """
         return self.distance(other) == 0
 
-    def contains(self, other):
+    def __contains__(self, other):
         """ Return true if one interval contains the other """
         return self.start <= other.start and self.end >= other.end
 
