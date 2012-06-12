@@ -18,10 +18,6 @@ fastinterval can be installed with pip::
 
     pip install fastinterval
 
-You must also install numpy and bx-python at the moment::
-
-    pip install numpy bx-python
-
 
 Development 
 -----------
