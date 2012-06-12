@@ -5,6 +5,6 @@ python:
   - "2.7"
   - "3.2"
 install:
-  - pip install --use-mirrors pyfasta bxpython nose
+  - pip install --use-mirrors pyfasta bx-python nose
   - python setup.py install
 script: python setup.py test
