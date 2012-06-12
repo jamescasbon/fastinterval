@@ -70,8 +70,6 @@ def _convert_strand(strand):
 class Interval(BaseInterval):
     """ A genomic interval """
 
-    GENOME = None
-
     def __init__(self, start, stop, genome=None, **kws):
         self.genome = genome
         if 'strand' in kws:
@@ -195,7 +193,8 @@ class Interval(BaseInterval):
         else :
             end = self.end
 
-        template = dict(chrom=self.chrom, strand=self.strand, value=self.value)
+        template = dict(chrom=self.chrom, strand=self.strand,
+                value=self.value, genome=self.genome)
         template.update(kws)
 
         return Interval(start, end, **template)
