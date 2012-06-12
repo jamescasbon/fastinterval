@@ -31,7 +31,7 @@ Genome
 MinimalSpanningSet
 ..................
 
-.. autoclass:: fastinterval.MinimumSpanningSet
+.. autoclass:: fastinterval.MinimalSpanningSet
 
 
 Indices and tables
