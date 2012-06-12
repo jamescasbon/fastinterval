@@ -2,6 +2,9 @@
 An simple interval class for DNA sequences from FASTA files that provides
 fast access to sequences and methods for interval logic on those sequences.
 
+An online version of the documentation should be available at 
+http://fastinterval.readthedocs.org/
+
 Usually you will create a `Genome` and then use that object to create
 intervals.  The intervals have a sequence property that will look up the
 actual sequence::

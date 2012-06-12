@@ -11,6 +11,24 @@ Overview
 --------
 .. automodule:: fastinterval
 
+Installation
+------------
+
+fastinterval can be installed with pip::
+
+    pip install fastinterval
+
+You must also install numpy and bx-python at the moment::
+
+    pip install numpy bx-python
+
+
+Development 
+-----------
+
+Bugs, patches, etc should be submitted to the github repository:
+https://github.com/jamescasbon/fastinterval
+
 
 API Documentation
 -----------------
