@@ -32,7 +32,7 @@ The Interval class supports many interval operations::
     True
     >>> int1.is_contiguous(int2)
     True
-    >>> int1.contains(int2)
+    >>> int1 in int2
     False
     >>> int1.intersection(int2)
     Interval(125, 150)

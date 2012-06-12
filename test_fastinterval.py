@@ -88,9 +88,9 @@ def test_Interval_contains():
     l2 = Interval.from_string('chr1:10858-10964:-1')
     l3 = Interval.from_string('chr1:20858-30001:-1')
     l4 = Interval.from_string('chr1:30000-30003:-1')
-    assert l1.contains(l2)
-    assert not l2.contains(l1)
-    assert not l3.contains(l4)
+    assert l2 in l1
+    assert not l1 in l2
+    assert not l3 in l4
 
 def test_Interval_intersection():
     l1 = Interval.from_string('chr1:10000-10967:1')
@@ -137,6 +137,7 @@ def test_Interval_sub():
     l2 = Interval.from_string('chr1:10858-10964:-1')
     l3 = Interval.from_string('chr2:10858-10964:-1')
     i = l1 - l2
+    print i
     assert len(i)==2
     l = i[0]
     r = i[1]

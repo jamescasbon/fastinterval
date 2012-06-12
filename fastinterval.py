@@ -54,7 +54,7 @@ so on.
 
 """
 
-VERSION = '0.0.1'
+VERSION = '0.1.0'
 
 from pyfasta import Fasta
 from bx.intervals import Interval as BaseInterval
@@ -202,10 +202,10 @@ class Interval(BaseInterval):
         if not self.overlaps(other):
             return [self]
 
-        if other.contains(self):
+        if self in other:
             return []
 
-        elif self.contains(other) and not (self.start == other.start or self.end == other.end):
+        elif other in self and not (self.start == other.start or self.end == other.end):
             left = self.copy()
             left.end = other.start
             right = self.copy()
