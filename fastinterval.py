@@ -1,7 +1,8 @@
 """
-An simple interval class for DNA sequences
+An simple interval class for DNA sequences from FASTA files that provides
+fast access to sequences and methods for interval logic on those sequences.
 
-Typically, you will create a genome and then use that object to create
+Usually you will create a `Genome` and then use that object to create
 intervals.  The intervals have a sequence property that will look up the
 actual sequence::
 
@@ -13,8 +14,9 @@ actual sequence::
     >>> print int1.sequence
     GATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGA
 
-fastinterval is using pyfasta to retrieve the sequence, so the access is mmapped.
-It supports strandedness, which will be respected when accessing the sequence::
+fastinterval uses pyfasta to retrieve the sequence, so the access is mmapped
+(i.e fast).  It supports strandedness, which will be respected when accessing
+the sequence::
 
     >>> int2 = test_genome.interval(100, 150, chrom='1', strand=-1)
     >>> print int2.sequence
@@ -91,9 +93,11 @@ class Interval(BaseInterval):
         ), one_based=False).upper()
 
     def __str__(self):
+        """ Return a chr:start-stop:strand representation of the interval """
         return "%s:%s-%s:%s" % (self.chrom, self.start, self.end, self.strand if self.strand else '')
 
     def __len__(self):
+        """ Return interval length """
         return self.end - self.start
 
     @classmethod
@@ -198,7 +202,10 @@ class Interval(BaseInterval):
 
 
     def __sub__(self, other):
-        """ Subtract an interval and return a list of intervals """
+        """ Subtract an interval and return a list of intervals
+
+            i.e. (10,50) - (20,30) returns [(10,20), (30,50)]
+        """
         if not self.overlaps(other):
             return [self]
 
@@ -308,7 +315,7 @@ class Genome(object):
 
 
 class MinimalSpanningSet(object):
-    """ Create a minimal spanning set for targets from a set of candidates """
+    """ Create a minimal spanning set for target intervals from a set of candidates """
 
     def score_candidate(self, candidate):
         return sum([
