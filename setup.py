@@ -25,7 +25,7 @@ setup(
     author_email='casbon@gmail.com',
     description='Interval class and fasta access',
     long_description=DOC,
-    requires=['pyfasta'],
+    install_requires=['numpy', 'pyfasta', 'bx-python'],
     url='https://github.com/jamescasbon/fastinterval',
     classifiers=[
         'Development Status :: 4 - Beta',
