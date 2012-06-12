@@ -1,7 +1,8 @@
 
-An simple interval class for DNA sequences
+An simple interval class for DNA sequences from FASTA files that provides
+fast access to sequences and methods for interval logic on those sequences.
 
-Typically, you will create a genome and then use that object to create
+Usually you will create a `Genome` and then use that object to create
 intervals.  The intervals have a sequence property that will look up the
 actual sequence::
 
@@ -13,8 +14,9 @@ actual sequence::
     >>> print int1.sequence
     GATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGA
 
-fastinterval is using pyfasta to retrieve the sequence, so the access is mmapped.
-It supports strandedness, which will be respected when accessing the sequence::
+fastinterval uses pyfasta to retrieve the sequence, so the access is mmapped
+(i.e fast).  It supports strandedness, which will be respected when accessing
+the sequence::
 
     >>> int2 = test_genome.interval(100, 150, chrom='1', strand=-1)
     >>> print int2.sequence
