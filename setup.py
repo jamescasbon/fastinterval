@@ -18,7 +18,6 @@ for line in open('fastinterval.py'):
         exec(line.strip())
 
 
-
 setup(
     name='fastinterval',
     py_modules=['fastinterval'],
@@ -26,7 +25,7 @@ setup(
     author_email='casbon@gmail.com',
     description='Interval class and fasta access',
     long_description=DOC,
-    requires=['pyfasta', 'bx-python'],
+    requires=['pyfasta'],
     url='https://github.com/jamescasbon/fastinterval',
     classifiers=[
         'Development Status :: 4 - Beta',
