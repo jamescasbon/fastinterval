@@ -315,15 +315,6 @@ class Genome(object):
         """docstring for from_string"""
         return Interval.from_string(data, genome=self.fasta)
 
-class HasInterval(object):
-    """ Mix in for classes with the standard interval attributes """
-
-    @property
-    def interval(self):
-        return Interval(self.start, self.end, chrom=self.chrom,
-            strand=self.strand, value=self)
-
-
 class MinimalSpanningSet(object):
     """ Create a minimal spanning set for target intervals from a set of candidates """
 
