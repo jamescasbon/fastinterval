@@ -311,6 +311,9 @@ class Genome(object):
         """ return an interval on this genome """
         return Interval(start, end, genome=self.fasta, **kws)
 
+    def from_string(self, data):
+        """docstring for from_string"""
+        return Interval.from_string(data, genome=self.fasta)
 
 class HasInterval(object):
     """ Mix in for classes with the standard interval attributes """
